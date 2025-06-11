@@ -1,19 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author ADLAN
- */
 package Registration;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
 
 public class DatabaseManager {
-    private static final String DB_URL = "jdbc:ucanaccess://C:\\Users\\NOLAN\\Documents\\NetBeansProjects\\Registration\\VUE_Exhibition.accdb";
+    private static final String DB_URL = "jdbc:ucanaccess://C:\\Users\\NOLAN\\Documents\\NetBeansProjects\\Registration\\VUE_Exhibition.accdb"; // update according to your specific paths..
 
     // No need for the static block anymore, we'll load the driver explicitly in MainClass
 
@@ -27,7 +18,7 @@ public class DatabaseManager {
         }
     }
 
-    // Initialize database and create table if it not exists
+    // Initializing the database and creating table if it does not exists
     public static void initializeDatabase() {
         try (Connection conn = DriverManager.getConnection(DB_URL);
              Statement stmt = conn.createStatement()) {
