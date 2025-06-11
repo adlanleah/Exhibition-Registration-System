@@ -1,16 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+package Registration;
 
-/**
- *
- * @author ADLAN
- */
-
-    package Registration;
 import java.awt.HeadlessException;
-    import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
         public class main {
         public static void main(String[] args) {
              System.out.println(System.getProperty("java.class.path"));
@@ -18,7 +9,7 @@ import java.awt.HeadlessException;
                 // Explicitly load the UCanAccess driver
                 Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
-                // Test the database connection (optional but good practice)
+                // Testing the database connection
                 if (DatabaseManager.testConnection()) {
                     System.out.println("Database connection successful!");
                 } else {
@@ -27,10 +18,10 @@ import java.awt.HeadlessException;
                     return; // Exit if the connection fails
                 }
 
-                // Initialize the database (create the table if it doesn't exist)
+                // Initializing the database and creating a table if it doesn't exist
                 DatabaseManager.initializeDatabase();
 
-                // Now create and display the GUI
+                // Now creating and displaying the GUI
                 RegistrationForm form = new RegistrationForm();
                 form.setVisible(true);
                 form.toFront();
